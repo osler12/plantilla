@@ -1,0 +1,90 @@
+<div class="container mt-5">
+        <!-- Sección de Ofertas de Seguros -->
+        <h2 class="text-center mb-4">Ofertas de Seguros</h2>
+        
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+            <!-- Oferta de Seguro Básico -->
+            <div class="col d-flex justify-content-center">
+                <div class="card h-100 shadow-lg" style="width: 18rem;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQenm7H2GeA13BJbh6axiYuIBfT2NGzgtmiJFEzZi5fsyVZxFuzmCGZC58Gn_9mtyYgSYo&usqp=CAU" class="card-img-top" alt="Seguro Básico">
+                    <div class="card-body">
+                        <h5 class="card-title">Seguro Básico</h5>
+                        <p class="card-text">Cobertura básica para tu auto o vida.</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#comprarModal" onclick="setFormData('Seguro Básico', 100)">Comprar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oferta de Seguro Todo Riesgo -->
+            <div class="col d-flex justify-content-center">
+                <div class="card h-100 shadow-lg" style="width: 18rem;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2QEwq1sqRY_G8cMvU2r8RsMzxxozy-FxlaNWCcY-VejIPy0BoOeQ2c7IUhsT8jUYd3FQ&usqp=CAU" class="card-img-top" alt="Seguro Todo Riesgo">
+                    <div class="card-body">
+                        <h5 class="card-title">Seguro Todo Riesgo</h5>
+                        <p class="card-text">Cobertura total para vehículos y vida.</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#comprarModal" onclick="setFormData('Seguro Todo Riesgo', 200)">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Compra -->
+        <div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="comprarModalLabel">Formulario de Compra</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCompra">
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Número de Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="seguro" class="form-label">Seguro Seleccionado</label>
+                                <input type="text" class="form-control" id="seguro" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="precio" class="form-label">Precio</label>
+                                <input type="text" class="form-control" id="precio" disabled>
+                            </div>
+                            <button type="submit" class="btn btn-success">Confirmar Compra</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabla de Compras -->
+        <h3 class="text-center mt-5 mb-4">Compras Realizadas</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Seguro</th>
+                    <th>Precio</th>
+                    <th>Fecha de Compra</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tablaCompras">
+                <!-- Aquí se agregarán las compras -->
+            </tbody>
+        </table>
+    </div>
